@@ -24,6 +24,8 @@ The target object additionally has a custom implementation that is unique to how
 
 The GameObject-"internal" communication from the generic `GazeTarget` script to the custom `ColorChanger` script happens via events. `GazeTarget` emits the `GazeOut` and `GazeEntered` events, which the `ColorChanger` script subscribes to.
 
+![Visualization of the raycast / gaze event architecture](https://raw.githubusercontent.com/andijakl/ARVR-MKL-Gaze/main/EventSystemForGaze.svg)
+
 ### Advantages of this architecture
 
 This architecture approach has the advantage that the source `GameObject` (e.g., the camera) doesn't need to know anything about the receiving object and can easily distinguish the raycast hits based on whether that object has a `GazeTarget` script component attached.
