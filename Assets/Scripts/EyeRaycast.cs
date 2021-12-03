@@ -62,14 +62,14 @@ public class EyeRaycast : MonoBehaviour
                 {
                     // Send GazeOut event to previous interactible
                     DeactiveateLastInteractible();
-                }
 
-                // If we hit an interactive item and it's not the same as
-                // the last interactive item, then call OnGazeEntered
-                if (interactible) 
-                {
-                    // Send GazeEntered event to new interactible
-                    interactible.OnGazeEntered(hit.point);
+                    // If we hit an interactive item and it's not the same as
+                    // the last interactive item, then call OnGazeEntered
+                    if (interactible)
+                    {
+                        // Send GazeEntered event to new interactible
+                        interactible.OnGazeEntered(hit.point);
+                    }
                 }
                 
                 _currentGazedObject = interactible;
