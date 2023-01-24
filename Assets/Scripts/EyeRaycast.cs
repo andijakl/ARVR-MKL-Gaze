@@ -16,13 +16,21 @@ public class EyeRaycast : MonoBehaviour
         // (which is on the same GameObject as this script)
         _cameraTransform = GetComponent<Camera>().transform;
 #if DEVELOPMENT_BUILD
-        Debug.Log("Ich bin im Development-Modus");
+        Debug.Log("I am running in developer mode");
 #endif
     }
 
     void Update()
     {
         PerformEyeRaycast();
+
+        // Profiler testing
+        //float x = 0;
+        //for (var i = 0; i < 1000; i++)
+        //{
+        //    x += Mathf.Sqrt(i);
+        //}
+        //Debug.Log(x);
     }
 
 
@@ -62,14 +70,14 @@ public class EyeRaycast : MonoBehaviour
                 {
                     // Send GazeOut event to previous interactible
                     DeactiveateLastInteractible();
+                }
 
-                    // If we hit an interactive item and it's not the same as
-                    // the last interactive item, then call OnGazeEntered
-                    if (interactible)
-                    {
-                        // Send GazeEntered event to new interactible
-                        interactible.OnGazeEntered(hit.point);
-                    }
+                // If we hit an interactive item and it's not the same as
+                // the last interactive item, then call OnGazeEntered
+                if (interactible) 
+                {
+                    // Send GazeEntered event to new interactible
+                    interactible.OnGazeEntered(hit.point);
                 }
                 
                 _currentGazedObject = interactible;

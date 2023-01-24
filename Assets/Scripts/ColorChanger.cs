@@ -30,7 +30,7 @@ public class ColorChanger : MonoBehaviour
     //Handle the OnGazeEntered event
     public void OnGazeEntered(object sender, Vector3 impactPoint)
     {
-        Debug.Log("Impact point: " + impactPoint);
+        //Debug.Log("Impact point: " + impactPoint);
         // Change material of GameObject's renderer to "over" material
         if (_gameObjectRenderer)
         {

@@ -19,7 +19,7 @@ public class GazeTarget : MonoBehaviour
     public void OnGazeEntered(Vector3 impactPoint)
     {
         IsOver = true;
-        Debug.Log("OnGazeEntered");
+        //Debug.Log("OnGazeEntered");
         // Only calls Invoke if GazeEntered != null meaning that someone has subscribed to this event
         GazeEntered?.Invoke(this, impactPoint);
     }
@@ -28,7 +28,7 @@ public class GazeTarget : MonoBehaviour
     public void OnGazeOut()
     {
         IsOver = false;
-        Debug.Log("OnGazeOut");
+        //Debug.Log("OnGazeOut");
         GazeOut?.Invoke();
     }
 }
